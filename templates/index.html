@@ -12,6 +12,7 @@
     <div>
         <p>
             {{ order.customer_name, order.order_date, order.quantity }} : <b>{{order.kitten_name, order.purrsonality}}</b>
+        <a href="/orders/{{order.id}}">{{order.id}}</a>
         </p>
     </div>
     {% endfor %}
