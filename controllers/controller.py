@@ -1,11 +1,12 @@
 from flask import render_template
 from app import app
-from models.kittens import orders
+from models.orders import orders
 
 @app.route("/orders")
 def index():
-    return render_template('index.html', title='Home', orders=orders)
+    return render_template('index.html', title='Kittens & Cats', orders=orders)
 
-@app.route("/orders/<id>")
-def get_order_by_id(id):
-    return render_template('order.html', order=orders[int(id)])
+@app.route("/orders/<index>")
+def show(index):
+    order = orders[int(index)]
+    return render_template('show.html', order=order)
